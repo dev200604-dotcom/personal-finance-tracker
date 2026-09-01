@@ -1,4 +1,4 @@
-const API_URL = 'https://personal-finance-tracker-6muu.onrender.com/api/transactions';
+const API_URL = 'https://personal-finance-tracker-1-ih49.onrender.com/api/transactions';
 
 const balanceEl = document.getElementById('total-balance');
 const incomeEl = document.getElementById('total-income');
