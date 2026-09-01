@@ -1,5 +1,28 @@
 const API_URL = 'https://personal-finance-tracker-1-ih49.onrender.com/api/transactions';
 
+// --- Theme Toggle Logic ---
+const themeToggleBtn = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme') || 'light';
+
+if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+}
+
+themeToggleBtn.addEventListener('click', () => {
+    let theme = document.documentElement.getAttribute('data-theme');
+    if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    }
+});
+
+// ... BAAKI AAPKA PURANA GET / ADD / DELETE TRANSACTIONS WALA LOGIC WAHI REHNE DO ...
 const balanceEl = document.getElementById('total-balance');
 const incomeEl = document.getElementById('total-income');
 const expenseEl = document.getElementById('total-expense');
